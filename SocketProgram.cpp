@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#define PORT 99999
+struct sockaddr_in srv;
+
 int main()
 {
 	WSADATA ws;
@@ -57,6 +60,24 @@ int main()
 	else
 	{
 		cout << "Socket mode set to blocking" << endl;
+	}
+
+	/* Bind the server code to a port */
+	/* IP Address */
+	/* Port */
+	srv.sin_family = AF_INET;
+	srv.sin_port = htons(PORT);
+	srv.sin_addr.s_addr = INADDR_ANY;
+	memset(&srv.sin_zero, 0, sizeof(srv));
+	error = bind(nListenerSocket, (struct sockaddr*)&srv, sizeof(srv));
+
+	if (error < 0)
+	{
+		cout << "Failed to bind to local port" << endl;
+	}
+	else
+	{
+		cout << "Bind to local port sucessfully" << endl;
 	}
 
 	return 0;
