@@ -44,5 +44,20 @@ int main()
 		cout << "Successfully set the socket options" << endl;
 	}
 
+	/* Control the mode of socket (I/O) */
+	/* Blocking: recv,send */
+	/* Non-Blockin: recv,send */
+	u_long nMode = 0; // 0->blocking
+	error = ioctlsocket(nListenerSocket, FIONBIO, &nMode);
+
+	if (error < 0)
+	{
+		cout << "The ioctlsocket failed" << endl;
+	}
+	else
+	{
+		cout << "Socket mode set to blocking" << endl;
+	}
+
 	return 0;
 }
