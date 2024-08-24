@@ -19,5 +19,17 @@ int main()
 		return EXIT_FAILURE;
 	}
 
+	/* Socket open */
+	int nListenerSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+	if (nListenerSocket < 0)
+	{
+		cout << "The socket failed to open"<<endl;
+	}
+	else
+	{
+		cout << "Socket open successfully"<<endl;
+	}
+
 	return 0;
 }
