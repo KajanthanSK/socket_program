@@ -2,4 +2,5 @@
 C:\Users\Kajanthan\Desktop\GITHUB\socket_program\SocketProgram.cpp(26,22): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
 C:\Users\Kajanthan\Desktop\GITHUB\socket_program\SocketProgram.cpp(69,23): warning C4305: 'argument': truncation from 'int' to 'u_short'
 C:\Users\Kajanthan\Desktop\GITHUB\socket_program\SocketProgram.cpp(69,23): warning C4309: 'argument': truncation of constant value
+C:\Users\Kajanthan\Desktop\GITHUB\socket_program\SocketProgram.cpp(100,20): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
   SocketProgram.vcxproj -> C:\Users\Kajanthan\Desktop\GITHUB\socket_program\x64\Debug\SocketProgram.exe

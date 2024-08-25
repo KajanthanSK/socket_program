@@ -80,5 +80,34 @@ int main()
 		cout << "Bind to local port sucessfully" << endl;
 	}
 
+	/* Listen and accept the new connection from client */
+	error = listen(nListenerSocket, 5);
+
+	if (error < 0)
+	{
+		cout << "Not able to listen" << endl;
+	}
+	else
+	{
+		cout << "Started listening to the port" << endl;
+	}
+
+	/* Accept the new incoming connection */
+	struct sockaddr_in client;
+	int nLen = sizeof(client);
+
+	/* nClientSocket will become the communication socket */
+	int nClientSocket = accept(nListenerSocket, (struct sockaddr*) &client, &nLen);
+
+	if (nClientSocket < 0)
+	{
+		cout << "Failed to accept the new connection" << endl;
+	}
+	else
+	{
+		cout << "Connected with a new client" << endl;
+		cout << "IP Address:" << client.sin_addr.s_addr << endl;
+	}
+
 	return 0;
 }
